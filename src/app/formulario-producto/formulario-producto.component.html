@@ -1,0 +1,10 @@
+<form class="d-flex align-items-center mt-2 w-50 mx-auto"
+(submit)="AgregarProductoAlista($event)">
+    <input type="text" #InputDescripcion id="Descripcion" name="decripcion" class="form-control d-flex justify-content-center me-3 w-75"
+         autocomplete="off"  placeholder="Descripcion Producto">
+
+    <input type="number" #InputPrecio id="precioinput" name="precioinput" class="form-control d-flex justify-content-center me-3 w-25"
+        placeholder="Precio">
+
+    <button class="btn btn-primary">Agregar</button>
+</form>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Producto } from '../data/producto.model';
 import {FormsModule}from '@angular/forms'
+import { FormularioProductoComponent } from "../formulario-producto/formulario-producto.component";
 
 @Component({
   selector: 'app-lista-productos',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, FormularioProductoComponent],
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css'
 })
@@ -20,13 +21,13 @@ export class ListaProductosComponent {
     {descripcion : 'Playera', precio : 50}
   ];
 
-  AgregarProductoAlista():void{
-    if(this.Descripcion.trim() === '' || this.Precio == null || this.Precio <= 0)
+  AgregarProductoAlista(productAdd : Producto ):void{
+    if(productAdd.descripcion.trim() === '' || productAdd.precio == null || productAdd.precio <= 0)
     {
       console.log("Error");
       return;
     }
-    this.ListaProductos.push({descripcion: this.Descripcion, precio: this.Precio});
+    this.ListaProductos.push(productAdd);
     this.Descripcion ='';
     this.Precio = null;
   };

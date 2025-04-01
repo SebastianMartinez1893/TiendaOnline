@@ -14,14 +14,6 @@
     <h2 class="text-success d-flex justify-content-center mt-2">
         Agregar Nuevo Producto
     </h2>
-    <form class="d-flex align-items-center mt-2 w-50 mx-auto">
-        <input type="text" id="Descripcion" name="decripcion" class="form-control d-flex justify-content-center me-3 w-75"
-        [(ngModel)] = "Descripcion" autocomplete="off"  placeholder="Descripcion Producto">
-
-        <input type="number" id="precioinput" name="precioinput" class="form-control d-flex justify-content-center me-3 w-25"
-        [(ngModel)] = "Precio" placeholder="Precio">
-
-        <button class="btn btn-primary" (click)="AgregarProductoAlista()">Agregar</button>
-    </form>
-    
+    <!-- <app-formulario-producto/> -->
+    <app-formulario-producto (respuestaProducto)="AgregarProductoAlista($event)"></app-formulario-producto>
 </div>
